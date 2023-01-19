@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{folder_name}}</title>
+</head>
+<body>
+    <h1>{{folder_name}}</h1>
+    <nav>
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('projects')}}">Projects</a>
+        <a href="{{url_for('about')}}">About</a>
+    </nav>
+    <ul>
+    {% for file in files %}
+        <li><a href="{{url_for('static', filename='projects/'+folder_name+'/'+file)}}">{{file}}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
