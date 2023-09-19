@@ -29,9 +29,6 @@ def project_folder(folder_name):
 def about():
     return render_template("about.html")
 
-@app.route("/sam")
-def sam():
-    return render_template("sam.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
