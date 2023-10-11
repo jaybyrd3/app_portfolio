@@ -25,12 +25,12 @@ def home():
 #     files = os.listdir(path)
 #     return render_template("folder_files.html", files=files, folder_name=folder_name)
 
-# @app.route("/about")
-# def about():
-#     return render_template("about.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/resume")
-def about():
+def resume():
     return render_template("resume.html")
 
 
