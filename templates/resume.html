@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
-        /* Add some basic styling for a cleaner appearance */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset default margin and padding */
+        html, body {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            height: 100%; /* set height to 100% so children can be sized relative to it */
+            overflow: hidden; /* prevent scrolling */
         }
-        h1 {
-            font-size: 24px;
-        }
+
+        /* Style for navigation bar */
         nav {
             background-color: #333;
             color: white;
             padding: 10px;
+            box-sizing: border-box; /* to include padding in the width calculation */
         }
         nav a {
             color: white;
             text-decoration: none;
             margin-right: 10px;
         }
+
+        /* Style for the content div */
         div {
-            margin-top: 20px;
-        }
-        /* Style for bullet points in lists */
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        /* Style for the embedded PDF viewer */
-        embed {
             width: 100%;
-            height: 600px;
+            height: calc(100% - 40px); /* height of the viewport minus the height of the nav */
+            overflow: auto; /* add scrolling if the content overflows */
+        }
+
+        /* Style for the embedded PDF viewer */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* remove default border around iframe */
         }
     </style>
 </head>
@@ -44,7 +46,6 @@
         <a href="{{ url_for('about') }}">About</a>
     </nav>
     <div>
-        <h1>Resume</h1>
         <!-- Embed your PDF resume here -->
         <iframe src="static/css/Resume.pdf"></iframe>
     </div>
